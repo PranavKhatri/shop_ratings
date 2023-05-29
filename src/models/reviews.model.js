@@ -9,8 +9,8 @@ async function getAllReviews(){
       .sort({shopId: 1})
 }
 
-async function saveReview(review){
 
+async function saveReview(review){
   return await reviewsDatabase.findOneAndUpdate({
       shopId: review.shopId,
       productId: review.productId,
@@ -19,6 +19,7 @@ async function saveReview(review){
       upsert: true,
   })
 }
+
 
 async function findReview(filter){
   return await reviewsDatabase.find(filter, {'_id':0 , '__v':0});
@@ -30,6 +31,7 @@ async function existsReviewByShopId(shopId){
         shopId: shopId,
     });
 }
+
 
 async function addNewReview(review){
 
