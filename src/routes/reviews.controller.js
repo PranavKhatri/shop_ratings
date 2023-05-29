@@ -1,6 +1,4 @@
-const { getAllReviews, existsReviewByShopId, reviews, addNewReview } = require('../models/reviews.model');
-
-
+const { getAllReviews, existsReviewByShopId, addNewReview } = require('../models/reviews.model');
 
 async function httpGetAllReviews(req, res){
 
@@ -144,6 +142,7 @@ async function httpAddNewReview(req, res){
 
    
     // reviews.push(new_review);
+    
     await addNewReview(review);
 
     return res.status(201).json(review);
