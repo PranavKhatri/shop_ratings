@@ -1,7 +1,5 @@
 const reviewsDatabase = require('./reviews.mongo');
 
-const reviews = new Map();
-
 const ACTIVE = 'ACTIVE';
 
 
@@ -132,7 +130,6 @@ async function addNewReview(review){
 //   }]
 
   module.exports = {
-    reviews,
     getAllReviews,
     saveReview,
     existsReviewByShopId,
